@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <orderId>12345</orderId>
+    <description>Order of books</description>
+    <requestDate>2024-11-16</requestDate>
+    <lineitems>
+        <lineitem>
+            <book>
+                <bookid>1</bookid>
+                <bookname>Dune</bookname>
+                <genre>science-fiction</genre>
+                <publishdate>1965-08-01</publishdate>
+                <authors>
+                    <author>
+                        <firstname>Frank</firstname>
+                        <lastname>Herbert</lastname>
+                        <penName>Herb</penName>
+                        <bio>Author of the Dune series</bio>
+                    </author>
+                </authors>
+            </book>
+            <quantity>2</quantity>
+            <price>15.99</price>
+        </lineitem>
+        <!--Add more Line items as needed -->
+    </lineitems>
+</order>

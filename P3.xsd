@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="order">
+     <xs:complexType>
+        <xs:sequence>
+            <xs:element name="orderId" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="requestDate" type="xs:date"/>
+            <xs:element name="lineitems">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="lineitem" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="book">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="bookid" type="xs:string"/>
+                                            <xs:element name="bookname" type="xs:string"/>
+                                            <xs:element name="genre">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="science-fiction"/>
+                                                        <xs:enumeration value="mystery"/>
+                                                        <xs:enumeration value="thriller"/>
+                                                        <xs:enumeration value="drama"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="publishdate" type="xs:date"/>
+                                            <xs:element name="authors">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="author" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element name="firstname" type="xs:string"/>
+                                                                    <xs:element name="lastname" type="xs:string"/>
+                                                                    <xs:element name="penName" type="xs:string" minOccurs="0"/> 
+                                                                    <xs:element name="bio" type="xs:string"/>
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+
+                                </xs:element>
+                                <xs:element name="quantity" type="xs:positiveInteger"/>
+                                <xs:element name="price">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                        <xs:minExclusive value="0"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                    </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+
+            </xs:element>
+        </xs:sequence>
+     </xs:complexType>
+</xs:element>
+</xs:schema>
